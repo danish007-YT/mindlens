@@ -1,0 +1,37 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Setup: create venv + install deps",
+      "type": "shell",
+      "command": "if (!(Test-Path .venv)) { python -m venv .venv }; .venv/Scripts/python.exe -m pip install --upgrade pip -q; .venv/Scripts/python.exe -m pip install -q -r requirements-server.txt -r ml/requirements.txt",
+      "options": { "cwd": "${workspaceFolder}" },
+      "problemMatcher": [],
+      "presentation": { "reveal": "silent", "panel": "shared" }
+    },
+    {
+      "label": "Run: Flask backend (server.py)",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe server.py",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Run: static file server (no backend)",
+      "type": "shell",
+      "command": "python -m http.server 8000",
+      "isBackground": true,
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "dedicated" }
+    },
+    {
+      "label": "Train: text model",
+      "type": "shell",
+      "command": "${workspaceFolder}/.venv/Scripts/python.exe ml/train_text_model.py",
+      "dependsOn": ["Setup: create venv + install deps"],
+      "problemMatcher": [],
+      "presentation": { "reveal": "always", "panel": "shared" }
+    }
+  ]
+}

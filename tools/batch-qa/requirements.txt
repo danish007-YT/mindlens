@@ -1,0 +1,4 @@
+tensorflow-cpu
+fer
+opencv-python-headless
+"setuptools<81"

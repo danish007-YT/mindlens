@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<!-- MindLens — Developed by Bhuvanidharan V -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindLens — Wellness Screening Companion</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+
+<!-- PWA -->
+<link rel="manifest" href="manifest.json">
+<link rel="icon" href="icons/favicon.ico">
+<link rel="apple-touch-icon" href="icons/icon-192.png">
+<meta name="theme-color" content="#1F2A44">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="MindLens">
+<meta name="description" content="A gentle, browser-based, multimodal wellness reflection tool. Academic prototype — not a diagnostic device.">
+</head>
+<body>
+
+<!-- Crisis banner: hidden by default, shown by script.js if risk indicators are detected -->
+<div id="crisisBanner" class="crisis-banner hidden" role="alert">
+  <div class="crisis-inner">
+    <span class="crisis-icon">💡</span>
+    <div class="crisis-text">
+      <strong data-i18n="crisis_strong">You matter, and help is close by.</strong>
+      <span data-i18n="crisis_text">If you're struggling right now, please reach out — these lines are free and confidential.</span>
+    </div>
+    <div class="crisis-numbers">
+      <a href="tel:18005990019">Danish: 1800-599-0019</a>
+      <a href="tel:18602662345">Rajesh: 1860-2662-345</a>
+      <a href="tel:9152987821">iCall: 9152987821</a>
+    </div>
+    <button id="closeCrisis" class="crisis-close" aria-label="Close">✕</button>
+  </div>
+</div>
+
+<header class="site-header">
+  <div id="permissionBanner" class="permission-banner" role="status" aria-live="polite">
+    <span id="permissionBannerText"><strong>Camera &amp; microphone access:</strong> MindLens needs permission to record for the voice and face check-ins.</span>
+    <button id="enableMediaBtn" type="button" class="permission-enable-btn">Enable camera &amp; microphone</button>
+    <button id="permissionDismiss" type="button" aria-label="Dismiss">✕</button>
+  </div>
+  <div class="brand">
+    <svg class="brand-mark" viewBox="0 0 48 48" width="40" height="40" aria-hidden="true">
+      <circle cx="24" cy="24" r="21" fill="none" stroke="var(--marigold)" stroke-width="2"/>
+      <path d="M24 6 L27 20 L24 24 L21 20 Z" fill="var(--saffron)"/>
+      <path d="M24 42 L27 28 L24 24 L21 28 Z" fill="var(--saffron)"/>
+      <path d="M6 24 L20 21 L24 24 L20 27 Z" fill="var(--indigo)"/>
+      <path d="M42 24 L28 21 L24 24 L28 27 Z" fill="var(--indigo)"/>
+      <circle cx="24" cy="24" r="5" fill="var(--sage)"/>
+    </svg>
+    <div class="brand-text">
+      <span class="brand-name">MindLens</span>
+      <span class="brand-sub" data-i18n="brand_sub">an ML-powered reflection of your wellbeing</span>
+    </div>
+  </div>
+  <nav class="site-nav">
+    <a href="#assess" data-i18n="nav_assess">Assess</a>
+    <a href="#dashboard" data-i18n="nav_dashboard">Dashboard</a>
+    <a href="#resources" data-i18n="nav_resources">Resources</a>
+    <a href="#locations" data-i18n="nav_locations">Find support</a>
+    <a href="#contribute" data-i18n="nav_contribute">Contribute</a>
+    <button id="langToggle" class="lang-toggle" type="button" aria-label="Switch language / மொழியை மாற்று">தமிழ்</button>
+    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Toggle theme">🌙</button>
+  </nav>
+</header>
+
+<main>
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-glow" aria-hidden="true"></div>
+    <div class="hero-content">
+      <p class="eyebrow" data-i18n="hero_eyebrow">A gentle, multimodal wellness screener</p>
+      <h1>
+        <span data-i18n="hero_h1_line1">Notice the weather</span><br>
+        <span class="accent" data-i18n="hero_h1_accent">inside your mind.</span>
+      </h1>
+      <p class="hero-copy" data-i18n="hero_copy">
+        MindLens uses machine learning and deep learning models to look at what you write, how you sound, and how you look — and reflects back a gentle, early indicator of depression risk. It is a first flicker of light in the dark, not a diagnosis.
+      </p>
+      <a href="#assess" class="cta-button" data-i18n="cta">Begin a check-in →</a>
+      <p class="hero-disclaimer" data-i18n="hero_disclaimer">
+        Not a medical device. If you are in crisis, scroll to Resources or call KIRAN 1800-599-0019.
+      </p>
+    </div>
+  </section>
+
+  <!-- ASSESSMENT: THREE MODALITIES, EACH IN ITS OWN SECTION -->
+  <div id="assess" class="assess">
+    <h2 class="section-title" style="padding:64px 40px 0; max-width:1200px; margin:0 auto;">
+      <span class="section-eyebrow" data-i18n="assess_eyebrow">Three modalities</span>
+      <span data-i18n="assess_title">Share as many as you're comfortable with</span>
+    </h2>
+
+    <nav class="assess-subnav">
+      <a href="#assess-text" class="assess-subnav-link" data-i18n="plate_text_title">Words</a>
+      <a href="#assess-audio" class="assess-subnav-link" data-i18n="plate_audio_title">Voice</a>
+      <a href="#assess-video" class="assess-subnav-link" data-i18n="plate_video_title">Face & Eyes</a>
+    </nav>
+
+    <!-- TEXT INPUT SECTION -->
+    <section id="assess-text" class="assess-modality">
+      <h3 class="assess-modality-title">
+        <span class="plate-icon">✍️</span>
+        <span data-i18n="plate_text_title">Words</span>
+      </h3>
+      <article class="plate" id="plate-text" style="max-width:640px;margin:0 auto;">
+        <header class="plate-head">
+          <span class="plate-status" id="status-text" data-i18n="status_not_started">Not started</span>
+        </header>
+        <p class="plate-help" data-i18n="plate_text_help">Write freely about how the last two weeks have felt. There's no right length. This is analysed with a deep-learning sentence-embedding model.</p>
+        <textarea id="textInput" rows="6" placeholder="Start typing here..." data-i18n-placeholder="text_placeholder"></textarea>
+        <div class="plate-actions">
+          <button class="btn-primary" id="analyzeTextBtn" data-i18n="analyze_text_btn">Analyse my words</button>
+          <button class="btn-secondary" id="textUploadBtn" type="button">Upload a file instead</button>
+          <input type="file" id="textFileInput" class="hidden" />
+          <span class="char-count" id="charCount">0 words</span>
+        </div>
+        <p class="plate-note" style="font-size:0.85rem;color:var(--indigo-soft);margin-top:6px;">Any file that contains readable text works best (.txt, .md, .csv, .json, notes exported as plain text). The file is read only in your browser and is analysed automatically once loaded.</p>
+        <div class="plate-result" id="result-text"></div>
+      </article>
+    </section>
+
+    <!-- AUDIO INPUT SECTION -->
+    <section id="assess-audio" class="assess-modality">
+      <h3 class="assess-modality-title">
+        <span class="plate-icon">🎙️</span>
+        <span data-i18n="plate_audio_title">Voice</span>
+      </h3>
+      <div class="demographic-row" style="display:flex;gap:12px;align-items:center;margin:0 auto 18px;max-width:640px;flex-wrap:wrap;">
+        <label for="genderSelect" style="font-weight:600;color:var(--indigo-soft);">Voice calibration:</label>
+        <select id="genderSelect" aria-label="Optional: helps calibrate typical vocal pitch range for the voice analysis">
+          <option value="unspecified">Prefer not to say</option>
+          <option value="boy">Male</option>
+          <option value="girl">Female</option>
+          <option value="other">Other</option>
+        </select>
+        <span style="font-size:0.85rem;color:var(--indigo-soft);">Optional — only used to set a sensible pitch baseline for the voice check.</span>
+      </div>
+      <article class="plate" id="plate-audio" style="max-width:640px;margin:0 auto;">
+        <header class="plate-head">
+          <span class="plate-status" id="status-audio" data-i18n="status_not_started">Not started</span>
+        </header>
+        <p class="plate-help" data-i18n="plate_audio_help">Record 15–20 seconds describing your day, in your natural voice and pace, in English. MindLens listens to what you say (e.g. "today I am very happy") using speech recognition, and scores the meaning of your words — the same understanding used for the text check-in — with acoustic tone as a backup signal if speech isn't picked up clearly.</p>
+        <div class="audio-visualizer"><canvas id="audioCanvas" height="70"></canvas></div>
+        <div class="plate-actions">
+          <button class="btn-primary" id="recordBtn" data-i18n="record_start">Start recording</button>
+          <button class="btn-secondary" id="audioUploadBtn" type="button">Upload a voice recording</button>
+          <input type="file" id="audioFileInput" accept="audio/*" class="hidden" />
+          <span class="timer" id="audioTimer">00:00</span>
+        </div>
+        <div class="plate-transcript hidden" id="voiceTranscript" aria-live="polite"></div>
+        <p class="plate-note" style="font-size:0.9rem;color:var(--indigo-soft);margin-top:10px;">Allow microphone access when prompted. If the recording does not start, check your browser's site permissions and reload the page. Speech recognition works best in Chrome/Edge; other browsers fall back to acoustic-only scoring.</p>
+        <p class="plate-note" style="font-size:0.85rem;color:var(--indigo-soft);margin-top:2px;">Prefer to upload instead? Any audio file works (mp3, wav, m4a, ogg, webm…). It's decoded and scored only in your browser — speech recognition isn't run on uploaded files, so tone/pace is used for the score.</p>
+        <div class="plate-result" id="result-audio"></div>
+      </article>
+    </section>
+
+    <!-- VIDEO INPUT SECTION -->
+    <section id="assess-video" class="assess-modality">
+      <h3 class="assess-modality-title">
+        <span class="plate-icon">🎥</span>
+        <span data-i18n="plate_video_title">Face & Eyes</span>
+      </h3>
+      <article class="plate" id="plate-video" style="max-width:640px;margin:0 auto;">
+        <header class="plate-head">
+          <span class="plate-status" id="status-video" data-i18n="status_not_started">Not started</span>
+        </header>
+        <p class="plate-help" data-i18n="plate_video_help">Take a photo with your camera, or upload a photo or short video from your device. A deep convolutional network reads your facial expression from a single frame — processed only in your browser.</p>
+        <p class="plate-note" style="font-size:0.85rem;color:var(--indigo-soft);margin:0;">For the clearest reading: face a light source, look straight at the camera, and make sure your whole face is visible and in focus.</p>
+        <div class="video-wrap" id="videoWrap">
+          <video id="videoFeed" autoplay playsinline muted></video>
+          <canvas id="videoOverlay"></canvas>
+          <div class="video-frame-guide">
+            <span data-i18n="video_focus_frame_label">Align your eyes and face within the box.</span>
+          </div>
+        </div>
+        <div class="video-overlay-note" data-i18n="video_overlay_note">Frame your face in the box and keep eyes visible.</div>
+        <img id="videoImagePreview" class="video-image-preview hidden" alt="">
+        <p class="video-quality-hint" id="videoQualityHint" aria-live="polite"></p>
+        <div class="plate-actions" style="flex-wrap:wrap;">
+          <button class="btn-primary" id="videoBtn" data-i18n="video_start">Take a photo</button>
+          <button class="btn-secondary" id="videoUploadBtn" type="button" data-i18n="video_upload">Upload a photo or video</button>
+          <input type="file" id="videoImageInput" accept="image/*,video/*" class="hidden" />
+        </div>
+        <div class="plate-actions" style="flex-wrap:wrap;">
+          <button class="btn-primary hidden" id="analyzeImageBtn" type="button" disabled data-i18n="analyze_image_btn">Analyse photo</button>
+          <button class="btn-secondary hidden" id="liveAnalyzeBtn" type="button" disabled data-i18n="video_live">Analyse live</button>
+        </div>
+        <div class="video-tip" data-i18n="video_tip">Aim for good lighting and keep your face centered in the frame.</div>
+        <p class="plate-note" style="font-size:0.9rem;color:var(--indigo-soft);margin-top:10px;" data-i18n="video_permission_note">Allow camera access when prompted if you take a photo. Uploaded photos are analysed only in your browser and are never sent anywhere.</p>
+        <div class="plate-result" id="result-video"></div>
+      </article>
+    </section>
+
+  </div>
+
+  <!-- DASHBOARD -->
+  <section id="dashboard" class="dashboard">
+    <h2 class="section-title">
+      <span class="section-eyebrow" data-i18n="dashboard_eyebrow">The combined reading</span>
+      <span data-i18n="dashboard_title">Your combined reflection</span>
+    </h2>
+    <div class="dashboard-grid">
+      <div class="gauge-wrap">
+        <svg id="haloGauge" viewBox="0 0 300 300"></svg>
+        <div class="gauge-label">
+          <span id="gaugeScore">--</span>
+          <span id="gaugeBand" data-i18n="gauge_placeholder">Add a check-in above</span>
+        </div>
+      </div>
+      <div class="dashboard-summary">
+        <h3>Current score</h3>
+        <div id="scoreSummaryValue">--</div>
+        <p id="scoreSummaryText">Complete a check-in to see your score.</p>
+        <div class="modality-bars">
+          <div class="bar-row"><span data-i18n="bar_words">Words</span><div class="bar"><div class="bar-fill" id="bar-text"></div></div><span class="bar-val" id="val-text">—</span></div>
+          <div class="bar-row"><span data-i18n="bar_voice">Voice</span><div class="bar"><div class="bar-fill" id="bar-audio"></div></div><span class="bar-val" id="val-audio">—</span></div>
+          <div class="bar-row"><span data-i18n="bar_face">Face</span><div class="bar"><div class="bar-fill" id="bar-video"></div></div><span class="bar-val" id="val-video">—</span></div>
+        </div>
+        <div class="dashboard-recommendations hidden" id="dashboardRecommendations"></div>
+        <div class="feel-good-card hidden" id="feelGoodCard"></div>
+      </div>
+    </div>
+    <p class="dashboard-note" data-i18n="dashboard_note">This score reflects surface patterns in language, tone and expression, estimated with machine-learning models — it cannot see your full context and is not a clinical assessment. A qualified counsellor can.</p>
+  </section>
+
+  <dialog id="nearbySupportDialog" class="nearby-support-dialog" aria-labelledby="nearbySupportTitle">
+    <div class="nearby-support-content">
+      <button class="nearby-support-close" id="nearbySupportClose" type="button" aria-label="Close suggestion">×</button>
+      <span class="section-eyebrow">A supportive next step</span>
+      <h2 id="nearbySupportTitle">Would talking with someone help?</h2>
+      <p class="nearby-support-intro">Your score is not a diagnosis. If you would like support, explore nearby options on Google Maps. Google may use your location to show nearby results.</p>
+      <a id="nearbySupportViewLocations" class="btn-primary nearby-support-locations-link" href="#locations" data-i18n="nearby_support_locations">View nearby support locations</a>
+      <button class="btn-secondary nearby-support-dismiss" id="nearbySupportDismiss" type="button">Maybe later</button>
+    </div>
+  </dialog>
+
+  <!-- RESOURCES -->
+  <section id="resources" class="resources">
+    <h2 class="section-title">
+      <span class="section-eyebrow" data-i18n="resources_eyebrow">Someone to talk to</span>
+      <span data-i18n="resources_title">Free, confidential support across India</span>
+    </h2>
+    <div class="resource-grid">
+      <div class="resource-card">
+        <h4>Danish</h4>
+        <p data-i18n="Danish_yt">Govt. of India mental health helpline, 24/7, 13 languages</p>
+        <a href="tel:18005990019">1800-599-0019</a>
+      </div>
+      <div class="resource-card">
+        <h4>Rajesh Foundation</h4>
+        <p data-i18n="Rajesh">24/7 crisis counselling</p>
+        <a href="tel:18602662345">1860-2662-345</a>
+      </div>
+      <div class="resource-card">
+        <h4>iCall (TISS)</h4>
+        <p data-i18n="icall_desc">Mon–Sat, 10am–8pm counselling</p>
+        <a href="tel:9152987821">9152987821</a>
+      </div>
+      <div class="resource-card">
+        <h4>AASRA</h4>
+        <p data-i18n="aasra_desc">24/7 helpline for those in distress</p>
+        <a href="tel:9820466726">9820466726</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEARBY SUPPORT LOCATIONS -->
+  <section id="locations" class="nearby-support-locations" aria-labelledby="locationsTitle">
+    <h2 class="section-title">
+      <span class="section-eyebrow" data-i18n="locations_eyebrow">Find help nearby</span>
+      <span id="locationsTitle" data-i18n="locations_title">Support locations on Google Maps</span>
+    </h2>
+    <p class="nearby-support-intro" data-i18n="locations_intro">Explore nearby counseling centers and psychiatrists. Google Maps may use your location to show relevant results. You can also open each search directly in Google Maps.</p>
+    <div class="nearby-location-controls">
+      <button id="useSupportLocation" class="btn-primary" type="button" data-i18n="use_my_location">Use my location</button>
+      <p id="supportLocationStatus" class="support-location-status" role="status" aria-live="polite" data-i18n="location_prompt">Choose this button to find support near you. Your location is shared with Google Maps only after you allow access.</p>
+    </div>
+    <div class="nearby-support-grid">
+      <section class="nearby-support-option" aria-labelledby="counselingLocationsTitle">
+        <h3 id="counselingLocationsTitle" data-i18n="counseling_locations_title">Counseling centers</h3>
+        <iframe title="Google Maps search for counseling centers near me" src="https://www.google.com/maps?q=counseling+centers+near+me&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=counseling%20centers%20near%20me" target="_blank" rel="noopener noreferrer" data-i18n="open_counseling_maps">Open counseling centers in Google Maps</a>
+      </section>
+      <section class="nearby-support-option" aria-labelledby="psychiatristLocationsTitle">
+        <h3 id="psychiatristLocationsTitle" data-i18n="psychiatrist_locations_title">Psychiatrists</h3>
+        <iframe title="Google Maps search for psychiatrists near me" src="https://www.google.com/maps?q=psychiatrists+near+me&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+        <a href="https://www.google.com/maps/search/?api=1&amp;query=psychiatrists%20near%20me" target="_blank" rel="noopener noreferrer" data-i18n="open_psychiatrist_maps">Open psychiatrists in Google Maps</a>
+      </section>
+    </div>
+  </section>
+
+  <!-- CONTRIBUTE / DATA DONATION -->
+  <section id="contribute" class="resources">
+    <h2 class="section-title">
+      <span class="section-eyebrow">Help improve MindLens</span>
+      <span>Contribute a quick sample</span>
+    </h2>
+    <div class="resource-card" style="max-width:640px;margin:0 auto;">
+      <p>
+        Record one simple sample so MindLens can learn better. It only takes a moment.
+      </p>
+      <p style="font-size:0.9rem;color:var(--indigo-soft);">
+        Your device keeps the files. You decide what to save.
+      </p>
+      <a href="collect.html" class="cta-button">Take a sample →</a>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p data-i18n="footer_note">MindLens is an academic screening prototype. It offers no diagnosis and stores no data outside your browser session.</p>
+  <p class="site-footer-credit">&copy; <span id="footerYear"></span> MindLens — Developed by Bhuvanidharan V</p>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs@4.20.0/dist/tf.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@tensorflow-models/universal-sentence-encoder@1.3.3/dist/universal-sentence-encoder.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/@vladmandic/face-api/dist/face-api.js"></script>
+<script src="text_model.data.js?v=20260722-1"></script>
+<script src="i18n.js?v=20261016-1"></script>
+<script src="script.js?v=20261016-1"></script>
+</body>
+</html>

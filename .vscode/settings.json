@@ -1,0 +1,58 @@
+{
+  // ---- Python (server.py, ml/ scripts) ----
+  "python.defaultInterpreterPath": "${workspaceFolder}/.venv/Scripts/python.exe",
+  "python.analysis.extraPaths": ["${workspaceFolder}"],
+  "python.analysis.typeCheckingMode": "basic",
+  "python.testing.pytestEnabled": false,
+  "[python]": {
+    "editor.defaultFormatter": "ms-python.black-formatter",
+    "editor.formatOnSave": false,
+    "editor.tabSize": 4
+  },
+
+  // ---- JS/HTML/CSS (frontend is plain, no build step) ----
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.tabSize": 2
+  },
+  "[html]": { "editor.tabSize": 2 },
+  "[css]": { "editor.tabSize": 2 },
+  "js/ts.validate.enabled": true,
+  "js/ts.implicitProjectConfig.checkJs": false,
+
+  // text_model.data.js is a large generated data file, not something to
+  // lint/format/open by accident — keep the editor light around it.
+  "files.readonlyInclude": {
+    "text_model.data.js": true,
+    "ml/export/*.json": true
+  },
+
+  // Live Server (used for the zero-backend/static run mode)
+  "liveServer.settings.root": "/",
+  "liveServer.settings.port": 5500,
+  "liveServer.settings.donotShowInfoMsg": true,
+
+  // Keep the explorer/search clean
+  "files.exclude": {
+    "**/__pycache__": true,
+    "**/*.pyc": true,
+    ".venv": true
+  },
+  "search.exclude": {
+    "ml/data/*.csv": true,
+    "text_model.data.js": true,
+    "**/*.png": true,
+    "**/*.ico": true
+  },
+  "files.watcherExclude": {
+    "**/.venv/**": true,
+    "**/ml/data/**": true
+  },
+
+  "editor.formatOnSave": true,
+  "editor.rulers": [100],
+  "files.eol": "\n",
+  "files.insertFinalNewline": true,
+  "files.trimTrailingWhitespace": true,
+  "python-envs.defaultEnvManager": "ms-python.python:venv"
+}

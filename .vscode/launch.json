@@ -1,0 +1,56 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "MindLens: Run server.py (Flask)",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "program": "${workspaceFolder}/server.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "preLaunchTask": "Setup: create venv + install deps",
+      "env": { "PORT": "5000", "MINDLENS_RELOAD": "0", "MINDLENS_DEBUG": "1" },
+      "serverReadyAction": {
+        "pattern": "Serving on http://\\S+:(\\d+)",
+        "uriFormat": "http://localhost:%s",
+        "action": "openExternally"
+      }
+    },
+    {
+      "name": "Python: train_text_model.py",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "program": "${workspaceFolder}/ml/train_text_model.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "preLaunchTask": "Setup: create venv + install deps",
+      "cwd": "${workspaceFolder}/ml"
+    },
+    {
+      "name": "Python: train_audio_model_TEMPLATE.py",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "program": "${workspaceFolder}/ml/train_audio_model_TEMPLATE.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "preLaunchTask": "Setup: create venv + install deps",
+      "cwd": "${workspaceFolder}/ml",
+      "args": ["--input-dir", "./audio_dataset", "--export", "../ml/export/audio_model.json"]
+    },
+    {
+      "name": "Python: train_video_model_TEMPLATE.py",
+      "type": "debugpy",
+      "request": "launch",
+      "python": "${workspaceFolder}/.venv/Scripts/python.exe",
+      "program": "${workspaceFolder}/ml/train_video_model_TEMPLATE.py",
+      "console": "integratedTerminal",
+      "justMyCode": true,
+      "preLaunchTask": "Setup: create venv + install deps",
+      "cwd": "${workspaceFolder}/ml",
+      "args": ["--fer-csv", "./fer2013.csv", "--export", "../ml/export/video_model.json"]
+    }
+  ]
+}

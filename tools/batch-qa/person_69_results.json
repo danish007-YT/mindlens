@@ -1,0 +1,1410 @@
+[
+  {
+    "file": "img_0.jpg",
+    "blur_variance": 15.6,
+    "image_dims": [
+      1280,
+      720
+    ],
+    "face_box": [
+      260,
+      0,
+      629,
+      703
+    ],
+    "detection_confidence": 0.999,
+    "face_area_fraction": 0.4798,
+    "expressions": {
+      "angry": 0.47,
+      "disgust": 0.0,
+      "fear": 0.05,
+      "happy": 0.01,
+      "sad": 0.16,
+      "surprise": 0.02,
+      "neutral": 0.31
+    },
+    "score": 73,
+    "band": "Elevated",
+    "quality_flags": [
+      "blurry"
+    ]
+  },
+  {
+    "file": "img_1.jpg",
+    "blur_variance": 35.9,
+    "image_dims": [
+      1200,
+      800
+    ],
+    "face_box": [
+      661,
+      100,
+      410,
+      579
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.2473,
+    "expressions": {
+      "angry": 0.02,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.04,
+      "sad": 0.09,
+      "surprise": 0.0,
+      "neutral": 0.84
+    },
+    "score": 53,
+    "band": "Moderate",
+    "quality_flags": [
+      "blurry"
+    ]
+  },
+  {
+    "file": "img_10.jpeg",
+    "blur_variance": 1945.3,
+    "image_dims": [
+      225,
+      225
+    ],
+    "face_box": [
+      65,
+      43,
+      130,
+      175
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.4494,
+    "expressions": {
+      "angry": 0.33,
+      "disgust": 0.0,
+      "fear": 0.02,
+      "happy": 0.09,
+      "sad": 0.06,
+      "surprise": 0.0,
+      "neutral": 0.49
+    },
+    "score": 60,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_11.jpg",
+    "blur_variance": 445.4,
+    "image_dims": [
+      400,
+      400
+    ],
+    "face_box": [
+      136,
+      84,
+      155,
+      204
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.1976,
+    "expressions": {
+      "angry": 0.07,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.01,
+      "sad": 0.01,
+      "surprise": 0.02,
+      "neutral": 0.87
+    },
+    "score": 52,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_12.jpeg",
+    "blur_variance": 1997.0,
+    "image_dims": [
+      169,
+      298
+    ],
+    "face_box": [
+      2,
+      49,
+      75,
+      140
+    ],
+    "detection_confidence": 0.999,
+    "face_area_fraction": 0.2085,
+    "expressions": {
+      "angry": 0.01,
+      "disgust": 0.0,
+      "fear": 0.02,
+      "happy": 0.55,
+      "sad": 0.05,
+      "surprise": 0.0,
+      "neutral": 0.37
+    },
+    "score": 26,
+    "band": "Mild",
+    "quality_flags": []
+  },
+  {
+    "file": "img_13.jpg",
+    "blur_variance": 113.4,
+    "image_dims": [
+      1080,
+      1920
+    ],
+    "face_box": [
+      16,
+      325,
+      989,
+      1369
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.6529,
+    "expressions": {
+      "angry": 0.63,
+      "disgust": 0.0,
+      "fear": 0.04,
+      "happy": 0.01,
+      "sad": 0.04,
+      "surprise": 0.02,
+      "neutral": 0.27
+    },
+    "score": 73,
+    "band": "Elevated",
+    "quality_flags": []
+  },
+  {
+    "file": "img_14.jpg",
+    "blur_variance": 61.0,
+    "image_dims": [
+      1600,
+      1200
+    ],
+    "face_box": [
+      495,
+      46,
+      721,
+      926
+    ],
+    "detection_confidence": 0.998,
+    "face_area_fraction": 0.3477,
+    "expressions": {
+      "angry": 0.0,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 1.0,
+      "sad": 0.0,
+      "surprise": 0.0,
+      "neutral": 0.0
+    },
+    "score": 0,
+    "band": "Minimal",
+    "quality_flags": [
+      "blurry"
+    ]
+  },
+  {
+    "file": "img_15.jpg",
+    "blur_variance": 195.6,
+    "image_dims": [
+      720,
+      1280
+    ],
+    "face_box": [
+      44,
+      344,
+      568,
+      837
+    ],
+    "detection_confidence": 0.997,
+    "face_area_fraction": 0.5159,
+    "expressions": {
+      "angry": 0.02,
+      "disgust": 0.0,
+      "fear": 0.1,
+      "happy": 0.05,
+      "sad": 0.05,
+      "surprise": 0.3,
+      "neutral": 0.48
+    },
+    "score": 50,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_16.jpeg",
+    "blur_variance": 266.9,
+    "image_dims": [
+      624,
+      409
+    ],
+    "face_box": [
+      267,
+      72,
+      117,
+      155
+    ],
+    "detection_confidence": 0.989,
+    "face_area_fraction": 0.0711,
+    "expressions": {
+      "angry": 0.0,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.99,
+      "sad": 0.0,
+      "surprise": 0.0,
+      "neutral": 0.01
+    },
+    "score": 1,
+    "band": "Minimal",
+    "quality_flags": []
+  },
+  {
+    "file": "img_17.jpeg",
+    "blur_variance": 9303.9,
+    "image_dims": [
+      168,
+      300
+    ],
+    "face_box": [
+      39,
+      31,
+      111,
+      149
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.3282,
+    "expressions": {
+      "angry": 0.05,
+      "disgust": 0.0,
+      "fear": 0.03,
+      "happy": 0.05,
+      "sad": 0.11,
+      "surprise": 0.0,
+      "neutral": 0.77
+    },
+    "score": 55,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_18.jpeg",
+    "blur_variance": 1562.9,
+    "image_dims": [
+      100,
+      100
+    ],
+    "face_box": [
+      12,
+      11,
+      43,
+      57
+    ],
+    "detection_confidence": 0.998,
+    "face_area_fraction": 0.2451,
+    "expressions": {
+      "angry": 0.01,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.0,
+      "sad": 0.01,
+      "surprise": 0.0,
+      "neutral": 0.98
+    },
+    "score": 51,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_19.jpg",
+    "blur_variance": 378.1,
+    "image_dims": [
+      1080,
+      1080
+    ],
+    "face_box": [
+      417,
+      212,
+      543,
+      777
+    ],
+    "detection_confidence": 0.99,
+    "face_area_fraction": 0.3617,
+    "expressions": {
+      "angry": 0.13,
+      "disgust": 0.0,
+      "fear": 0.16,
+      "happy": 0.07,
+      "sad": 0.25,
+      "surprise": 0.04,
+      "neutral": 0.35
+    },
+    "score": 67,
+    "band": "Elevated",
+    "quality_flags": []
+  },
+  {
+    "file": "img_2.jpeg",
+    "blur_variance": 2421.1,
+    "image_dims": [
+      168,
+      300
+    ],
+    "face_box": [
+      26,
+      40,
+      141,
+      219
+    ],
+    "detection_confidence": 0.999,
+    "face_area_fraction": 0.6127,
+    "expressions": {
+      "angry": 0.1,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.02,
+      "sad": 0.02,
+      "surprise": 0.0,
+      "neutral": 0.85
+    },
+    "score": 54,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_20.jpg",
+    "blur_variance": 310.9,
+    "image_dims": [
+      240,
+      240
+    ],
+    "face_box": [
+      77,
+      44,
+      90,
+      127
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.1984,
+    "expressions": {
+      "angry": 0.11,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.77,
+      "sad": 0.0,
+      "surprise": 0.0,
+      "neutral": 0.11
+    },
+    "score": 16,
+    "band": "Minimal",
+    "quality_flags": []
+  },
+  {
+    "file": "img_21.jpg",
+    "blur_variance": 196.3,
+    "image_dims": [
+      1106,
+      740
+    ],
+    "face_box": [
+      258,
+      0,
+      612,
+      731
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.5466,
+    "expressions": {
+      "angry": 0.02,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.01,
+      "sad": 0.05,
+      "surprise": 0.0,
+      "neutral": 0.92
+    },
+    "score": 53,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_22.jpg",
+    "blur_variance": 165.5,
+    "image_dims": [
+      706,
+      437
+    ],
+    "face_box": [
+      266,
+      58,
+      144,
+      176
+    ],
+    "detection_confidence": 0.91,
+    "face_area_fraction": 0.0821,
+    "expressions": {
+      "angry": 0.03,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.12,
+      "sad": 0.04,
+      "surprise": 0.0,
+      "neutral": 0.81
+    },
+    "score": 47,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_23.jpg",
+    "blur_variance": 199.1,
+    "image_dims": [
+      700,
+      420
+    ],
+    "face_box": [
+      200,
+      14,
+      264,
+      377
+    ],
+    "detection_confidence": 0.998,
+    "face_area_fraction": 0.3385,
+    "expressions": {
+      "angry": 0.08,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.03,
+      "sad": 0.04,
+      "surprise": 0.01,
+      "neutral": 0.83
+    },
+    "score": 53,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_24.jpeg",
+    "blur_variance": 1816.4,
+    "image_dims": [
+      225,
+      225
+    ],
+    "face_box": [
+      37,
+      4,
+      135,
+      192
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.512,
+    "expressions": {
+      "angry": 0.07,
+      "disgust": 0.0,
+      "fear": 0.12,
+      "happy": 0.02,
+      "sad": 0.32,
+      "surprise": 0.01,
+      "neutral": 0.46
+    },
+    "score": 69,
+    "band": "Elevated",
+    "quality_flags": []
+  },
+  {
+    "file": "img_25.jpg",
+    "blur_variance": 311.7,
+    "image_dims": [
+      720,
+      720
+    ],
+    "face_box": [
+      47,
+      125,
+      457,
+      594
+    ],
+    "detection_confidence": 0.957,
+    "face_area_fraction": 0.5236,
+    "expressions": {
+      "angry": 0.14,
+      "disgust": 0.0,
+      "fear": 0.1,
+      "happy": 0.17,
+      "sad": 0.18,
+      "surprise": 0.05,
+      "neutral": 0.36
+    },
+    "score": 57,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_26.jpeg",
+    "blur_variance": 3418.4,
+    "image_dims": [
+      168,
+      300
+    ],
+    "face_box": [
+      12,
+      81,
+      130,
+      199
+    ],
+    "detection_confidence": 0.996,
+    "face_area_fraction": 0.5133,
+    "expressions": {
+      "angry": 0.04,
+      "disgust": 0.0,
+      "fear": 0.19,
+      "happy": 0.01,
+      "sad": 0.17,
+      "surprise": 0.12,
+      "neutral": 0.47
+    },
+    "score": 63,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_27.jpeg",
+    "blur_variance": 841.0,
+    "image_dims": [
+      290,
+      174
+    ],
+    "face_box": [
+      84,
+      5,
+      109,
+      157
+    ],
+    "detection_confidence": 0.998,
+    "face_area_fraction": 0.3391,
+    "expressions": {
+      "angry": 0.11,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.0,
+      "sad": 0.14,
+      "surprise": 0.0,
+      "neutral": 0.73
+    },
+    "score": 60,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_28.jpg",
+    "blur_variance": 189.0,
+    "image_dims": [
+      900,
+      506
+    ],
+    "face_box": [
+      417,
+      153,
+      123,
+      146
+    ],
+    "detection_confidence": 0.983,
+    "face_area_fraction": 0.0394,
+    "expressions": {
+      "angry": 0.0,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 1.0,
+      "sad": 0.0,
+      "surprise": 0.0,
+      "neutral": 0.0
+    },
+    "score": 0,
+    "band": "Minimal",
+    "quality_flags": []
+  },
+  {
+    "file": "img_29.jpeg",
+    "blur_variance": 1325.0,
+    "image_dims": [
+      166,
+      303
+    ],
+    "face_box": [
+      15,
+      58,
+      119,
+      168
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.3975,
+    "expressions": {
+      "angry": 0.07,
+      "disgust": 0.0,
+      "fear": 0.02,
+      "happy": 0.08,
+      "sad": 0.03,
+      "surprise": 0.0,
+      "neutral": 0.78
+    },
+    "score": 50,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_3.jpeg",
+    "blur_variance": 1332.0,
+    "image_dims": [
+      100,
+      100
+    ],
+    "face_box": [
+      6,
+      11,
+      66,
+      88
+    ],
+    "detection_confidence": 0.912,
+    "face_area_fraction": 0.5808,
+    "expressions": {
+      "angry": 0.41,
+      "disgust": 0.0,
+      "fear": 0.04,
+      "happy": 0.01,
+      "sad": 0.19,
+      "surprise": 0.01,
+      "neutral": 0.34
+    },
+    "score": 73,
+    "band": "Elevated",
+    "quality_flags": []
+  },
+  {
+    "file": "img_30.jpg",
+    "blur_variance": 221.9,
+    "image_dims": [
+      607,
+      1080
+    ],
+    "face_box": [
+      104,
+      136,
+      502,
+      802
+    ],
+    "detection_confidence": 0.999,
+    "face_area_fraction": 0.6141,
+    "expressions": {
+      "angry": 0.04,
+      "disgust": 0.0,
+      "fear": 0.02,
+      "happy": 0.01,
+      "sad": 0.03,
+      "surprise": 0.02,
+      "neutral": 0.87
+    },
+    "score": 53,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_31.jpg",
+    "blur_variance": 268.3,
+    "image_dims": [
+      1080,
+      1080
+    ],
+    "face_box": [
+      0,
+      69,
+      431,
+      987
+    ],
+    "detection_confidence": 0.96,
+    "face_area_fraction": 0.3647,
+    "expressions": {
+      "angry": 0.14,
+      "disgust": 0.0,
+      "fear": 0.11,
+      "happy": 0.02,
+      "sad": 0.53,
+      "surprise": 0.0,
+      "neutral": 0.2
+    },
+    "score": 81,
+    "band": "Elevated",
+    "quality_flags": []
+  },
+  {
+    "file": "img_32.jpg",
+    "blur_variance": 124.0,
+    "image_dims": [
+      720,
+      1280
+    ],
+    "face_box": [
+      4,
+      336,
+      516,
+      713
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.3992,
+    "expressions": {
+      "angry": 0.3,
+      "disgust": 0.0,
+      "fear": 0.04,
+      "happy": 0.01,
+      "sad": 0.36,
+      "surprise": 0.01,
+      "neutral": 0.28
+    },
+    "score": 76,
+    "band": "Elevated",
+    "quality_flags": []
+  },
+  {
+    "file": "img_33.jpeg",
+    "blur_variance": 1456.0,
+    "image_dims": [
+      259,
+      194
+    ],
+    "face_box": [
+      90,
+      14,
+      125,
+      167
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.4155,
+    "expressions": {
+      "angry": 0.02,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.0,
+      "sad": 0.09,
+      "surprise": 0.01,
+      "neutral": 0.87
+    },
+    "score": 55,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_34.jpg",
+    "blur_variance": 311.0,
+    "image_dims": [
+      1200,
+      667
+    ],
+    "face_box": [
+      569,
+      107,
+      384,
+      512
+    ],
+    "detection_confidence": 0.751,
+    "face_area_fraction": 0.2456,
+    "expressions": {
+      "angry": 0.01,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.89,
+      "sad": 0.01,
+      "surprise": 0.0,
+      "neutral": 0.08
+    },
+    "score": 7,
+    "band": "Minimal",
+    "quality_flags": []
+  },
+  {
+    "file": "img_35.jpg",
+    "blur_variance": 493.1,
+    "image_dims": [
+      1080,
+      1080
+    ],
+    "face_box": [
+      313,
+      217,
+      623,
+      833
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.4449,
+    "expressions": {
+      "angry": 0.03,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.06,
+      "sad": 0.05,
+      "surprise": 0.01,
+      "neutral": 0.85
+    },
+    "score": 50,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_36.jpeg",
+    "blur_variance": 416.4,
+    "image_dims": [
+      275,
+      183
+    ],
+    "face_box": [
+      152,
+      21,
+      95,
+      134
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.253,
+    "expressions": {
+      "angry": 0.08,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.05,
+      "sad": 0.05,
+      "surprise": 0.0,
+      "neutral": 0.82
+    },
+    "score": 52,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_37.jpg",
+    "blur_variance": 1097.7,
+    "image_dims": [
+      225,
+      225
+    ],
+    "face_box": [
+      58,
+      51,
+      107,
+      157
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.3318,
+    "expressions": {
+      "angry": 0.32,
+      "disgust": 0.0,
+      "fear": 0.02,
+      "happy": 0.04,
+      "sad": 0.09,
+      "surprise": 0.01,
+      "neutral": 0.52
+    },
+    "score": 63,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_38.jpg",
+    "blur_variance": 515.5,
+    "image_dims": [
+      408,
+      720
+    ],
+    "face_box": [
+      3,
+      117,
+      184,
+      340
+    ],
+    "detection_confidence": 0.999,
+    "face_area_fraction": 0.213,
+    "expressions": {
+      "angry": 0.01,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.29,
+      "sad": 0.02,
+      "surprise": 0.01,
+      "neutral": 0.67
+    },
+    "score": 37,
+    "band": "Mild",
+    "quality_flags": []
+  },
+  {
+    "file": "img_39.jpeg",
+    "blur_variance": 780.7,
+    "image_dims": [
+      299,
+      168
+    ],
+    "face_box": [
+      83,
+      20,
+      76,
+      97
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.1468,
+    "expressions": {
+      "angry": 0.0,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.0,
+      "sad": 0.01,
+      "surprise": 0.0,
+      "neutral": 0.98
+    },
+    "score": 50,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_4.jpg",
+    "blur_variance": 571.3,
+    "image_dims": [
+      1200,
+      675
+    ],
+    "face_box": [
+      440,
+      26,
+      374,
+      531
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.2452,
+    "expressions": {
+      "angry": 0.0,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.92,
+      "sad": 0.0,
+      "surprise": 0.0,
+      "neutral": 0.08
+    },
+    "score": 4,
+    "band": "Minimal",
+    "quality_flags": []
+  },
+  {
+    "file": "img_40.jpeg",
+    "blur_variance": 2868.7,
+    "image_dims": [
+      201,
+      251
+    ],
+    "face_box": [
+      8,
+      67,
+      135,
+      184
+    ],
+    "detection_confidence": 0.992,
+    "face_area_fraction": 0.4924,
+    "expressions": {
+      "angry": 0.51,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.02,
+      "sad": 0.03,
+      "surprise": 0.01,
+      "neutral": 0.42
+    },
+    "score": 67,
+    "band": "Elevated",
+    "quality_flags": []
+  },
+  {
+    "file": "img_41.jpg",
+    "blur_variance": 102.4,
+    "image_dims": [
+      1067,
+      807
+    ],
+    "face_box": [
+      327,
+      43,
+      139,
+      194
+    ],
+    "detection_confidence": 0.976,
+    "face_area_fraction": 0.0313,
+    "expressions": {
+      "angry": 0.01,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.01,
+      "sad": 0.01,
+      "surprise": 0.0,
+      "neutral": 0.98
+    },
+    "score": 50,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_42.jpeg",
+    "blur_variance": 2363.5,
+    "image_dims": [
+      168,
+      300
+    ],
+    "face_box": [
+      2,
+      45,
+      154,
+      219
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.6692,
+    "expressions": {
+      "angry": 0.04,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.0,
+      "sad": 0.05,
+      "surprise": 0.0,
+      "neutral": 0.9
+    },
+    "score": 54,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_43.jpg",
+    "blur_variance": 239.1,
+    "image_dims": [
+      607,
+      1080
+    ],
+    "face_box": [
+      253,
+      251,
+      350,
+      670
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.3577,
+    "expressions": {
+      "angry": 0.06,
+      "disgust": 0.0,
+      "fear": 0.03,
+      "happy": 0.03,
+      "sad": 0.01,
+      "surprise": 0.02,
+      "neutral": 0.84
+    },
+    "score": 52,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_44.jpg",
+    "blur_variance": 58.9,
+    "image_dims": [
+      730,
+      540
+    ],
+    "face_box": [
+      197,
+      71,
+      339,
+      431
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.3706,
+    "expressions": {
+      "angry": 0.02,
+      "disgust": 0.0,
+      "fear": 0.05,
+      "happy": 0.01,
+      "sad": 0.02,
+      "surprise": 0.0,
+      "neutral": 0.91
+    },
+    "score": 53,
+    "band": "Moderate",
+    "quality_flags": [
+      "blurry"
+    ]
+  },
+  {
+    "file": "img_45.jpeg",
+    "blur_variance": 2585.7,
+    "image_dims": [
+      225,
+      225
+    ],
+    "face_box": [
+      87,
+      42,
+      108,
+      165
+    ],
+    "detection_confidence": 0.99,
+    "face_area_fraction": 0.352,
+    "expressions": {
+      "angry": 0.2,
+      "disgust": 0.0,
+      "fear": 0.14,
+      "happy": 0.18,
+      "sad": 0.07,
+      "surprise": 0.05,
+      "neutral": 0.36
+    },
+    "score": 55,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_46.jpeg",
+    "blur_variance": 3013.6,
+    "image_dims": [
+      275,
+      184
+    ],
+    "face_box": [
+      63,
+      0,
+      153,
+      181
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.5473,
+    "expressions": {
+      "angry": 0.07,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.1,
+      "sad": 0.14,
+      "surprise": 0.0,
+      "neutral": 0.68
+    },
+    "score": 54,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_47.jpg",
+    "blur_variance": 517.3,
+    "image_dims": [
+      320,
+      480
+    ],
+    "face_box": [
+      44,
+      80,
+      224,
+      279
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.4069,
+    "expressions": {
+      "angry": 0.04,
+      "disgust": 0.0,
+      "fear": 0.2,
+      "happy": 0.02,
+      "sad": 0.2,
+      "surprise": 0.03,
+      "neutral": 0.52
+    },
+    "score": 65,
+    "band": "Elevated",
+    "quality_flags": []
+  },
+  {
+    "file": "img_48.jpg",
+    "blur_variance": 799.1,
+    "image_dims": [
+      720,
+      900
+    ],
+    "face_box": [
+      30,
+      256,
+      490,
+      644
+    ],
+    "detection_confidence": 0.986,
+    "face_area_fraction": 0.487,
+    "expressions": {
+      "angry": 0.02,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.02,
+      "sad": 0.01,
+      "surprise": 0.0,
+      "neutral": 0.96
+    },
+    "score": 50,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_49.jpeg",
+    "blur_variance": 1122.3,
+    "image_dims": [
+      168,
+      300
+    ],
+    "face_box": [
+      1,
+      79,
+      118,
+      167
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.391,
+    "expressions": {
+      "angry": 0.56,
+      "disgust": 0.0,
+      "fear": 0.05,
+      "happy": 0.03,
+      "sad": 0.16,
+      "surprise": 0.0,
+      "neutral": 0.19
+    },
+    "score": 76,
+    "band": "Elevated",
+    "quality_flags": []
+  },
+  {
+    "file": "img_5.jpeg",
+    "blur_variance": 3074.0,
+    "image_dims": [
+      100,
+      100
+    ],
+    "face_box": [
+      30,
+      18,
+      56,
+      79
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.4424,
+    "expressions": {
+      "angry": 0.17,
+      "disgust": 0.0,
+      "fear": 0.01,
+      "happy": 0.08,
+      "sad": 0.03,
+      "surprise": 0.0,
+      "neutral": 0.72
+    },
+    "score": 53,
+    "band": "Moderate",
+    "quality_flags": []
+  },
+  {
+    "file": "img_6.jpeg",
+    "blur_variance": 2091.7,
+    "image_dims": [
+      100,
+      100
+    ],
+    "face_box": [
+      16,
+      1,
+      67,
+      88
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.5896,
+    "expressions": {
+      "angry": 0.08,
+      "disgust": 0.0,
+      "fear": 0.2,
+      "happy": 0.18,
+      "sad": 0.34,
+      "surprise": 0.01,
+      "neutral": 0.2
+    },
+    "score": 65,
+    "band": "Elevated",
+    "quality_flags": []
+  },
+  {
+    "file": "img_7.jpeg",
+    "blur_variance": 1708.4,
+    "image_dims": [
+      225,
+      224
+    ],
+    "face_box": [
+      63,
+      38,
+      129,
+      186
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.4761,
+    "expressions": {
+      "angry": 0.0,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 1.0,
+      "sad": 0.0,
+      "surprise": 0.0,
+      "neutral": 0.0
+    },
+    "score": 0,
+    "band": "Minimal",
+    "quality_flags": []
+  },
+  {
+    "file": "img_8.jpg",
+    "blur_variance": 237.9,
+    "image_dims": [
+      1080,
+      1079
+    ],
+    "face_box": [
+      303,
+      188,
+      612,
+      891
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.4679,
+    "expressions": {
+      "angry": 0.0,
+      "disgust": 0.0,
+      "fear": 0.0,
+      "happy": 0.98,
+      "sad": 0.0,
+      "surprise": 0.0,
+      "neutral": 0.02
+    },
+    "score": 1,
+    "band": "Minimal",
+    "quality_flags": []
+  },
+  {
+    "file": "img_9.jpeg",
+    "blur_variance": 2350.4,
+    "image_dims": [
+      100,
+      100
+    ],
+    "face_box": [
+      15,
+      1,
+      61,
+      85
+    ],
+    "detection_confidence": 1.0,
+    "face_area_fraction": 0.5185,
+    "expressions": {
+      "angry": 0.09,
+      "disgust": 0.0,
+      "fear": 0.08,
+      "happy": 0.03,
+      "sad": 0.13,
+      "surprise": 0.04,
+      "neutral": 0.62
+    },
+    "score": 59,
+    "band": "Moderate",
+    "quality_flags": []
+  }
+]

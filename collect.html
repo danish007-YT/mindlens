@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>MindLens — Research Data Collection</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@500;600;700;800&family=Mukta:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="collect.css">
+<link rel="icon" href="icons/favicon.ico">
+<meta name="robots" content="noindex, nofollow">
+<meta name="description" content="Researcher-only tool for capturing consented audio/video samples for MindLens model training. Not part of the public wellness screener.">
+</head>
+<body>
+
+<header class="topbar">
+  <div class="topbar-inner">
+    <a href="index.html" class="back-link">← MindLens</a>
+    <div class="topbar-title">
+      <span class="topbar-tag">Researcher tool</span>
+      <h1>Consented data collection</h1>
+    </div>
+    <div class="progress-chip" id="progressChip" aria-live="polite">
+      <span class="progress-chip-dot" id="progressChipDot"></span>
+      <span id="progressChipText">0 of 9 items ready</span>
+    </div>
+  </div>
+</header>
+
+<div class="wrap">
+  <p class="intro">For researchers and study staff only. Capture audio, a labelled selfie set, and basic metadata for model training. <strong>Captured data stays in this browser until you explicitly upload it to the configured MongoDB database.</strong></p>
+
+  <!-- CONSENT (gates everything below) -->
+  <section class="card consent-card" id="section-consent">
+    <div class="card-head">
+      <span class="card-icon">🛡️</span>
+      <div>
+        <h2>1 · Participant &amp; consent</h2>
+        <p class="card-sub">Nothing below unlocks until consent is confirmed.</p>
+      </div>
+    </div>
+
+    <form id="metaForm" class="meta-grid">
+      <label for="pid">Participant ID (or pseudonym)
+        <input id="pid" name="pid" placeholder="e.g. P001" autocomplete="off" />
+      </label>
+      <label for="age">Age
+        <input id="age" name="age" type="number" min="8" max="120" placeholder="e.g. 24" />
+      </label>
+      <label for="gender">Gender
+        <select id="gender" name="gender">
+          <option value="unspecified">Prefer not to say</option>
+          <option value="boy">Boy / Male</option>
+          <option value="girl">Girl / Female</option>
+        </select>
+      </label>
+    </form>
+
+    <label class="consent" for="consent">
+      <input id="consent" type="checkbox" />
+      <span class="consent-box" aria-hidden="true"></span>
+      <span class="consent-text">I consent to my anonymised audio/video being used for research and model training. I confirm I am authorised to provide this consent.</span>
+    </label>
+    <div class="consent-status" id="consentStatus">Not yet confirmed — capture sections below are locked.</div>
+  </section>
+
+  <!-- The rest is gated (visually + functionally) behind consent -->
+  <div id="gatedSections" class="gated">
+
+    <!-- TEXT -->
+    <section class="card capture-card" id="section-text">
+      <div class="card-head">
+        <span class="card-icon">✍️</span>
+        <div>
+          <h2>2 · Text sample</h2>
+          <p class="card-sub">A few natural sentences, any language, any topic.</p>
+        </div>
+        <span class="step-badge" id="textBadge">Not started</span>
+      </div>
+      <textarea id="textSample" rows="5" placeholder="Type a sample of natural writing here…" aria-describedby="textStatus"></textarea>
+      <div id="textStatus" class="status" aria-live="polite">Idle</div>
+    </section>
+
+    <!-- VOICE -->
+    <section class="card capture-card" id="section-voice">
+      <div class="card-head">
+        <span class="card-icon">🎙️</span>
+        <div>
+          <h2>3 · Voice recording</h2>
+          <p class="card-sub">15–20 seconds of natural speech.</p>
+        </div>
+        <span class="step-badge" id="audioBadge">Not started</span>
+      </div>
+      <div class="control-row">
+        <button id="startAudio" class="btn btn-primary">Start recording</button>
+        <button id="stopAudio" class="btn btn-secondary" disabled>Stop</button>
+        <div id="audioStatus" class="status" aria-live="polite">
+          <span class="rec-dot" id="audioRecDot" aria-hidden="true"></span>
+          <span id="audioStatusText">Idle</span>
+        </div>
+      </div>
+      <audio id="audioPlayback" controls></audio>
+    </section>
+
+    <!-- VIDEO -->
+    <section class="card capture-card" id="section-video">
+      <div class="card-head">
+        <span class="card-icon">📸</span>
+        <div>
+          <h2>4 · Expression photo capture</h2>
+          <p class="card-sub">Open the camera and capture one standardized photo for each expression. Seven labelled examples for model training.</p>
+        </div>
+        <span class="step-badge" id="videoBadge">0 / 7</span>
+      </div>
+
+      <div class="camera-frame">
+        <video id="videoPreview" autoplay playsinline muted></video>
+      </div>
+      <p class="camera-hint">Tap an expression card to take a square photo. The browser will request camera access if needed.</p>
+
+      <div id="expressionCapture" class="expression-grid">
+        <!-- populated by collect.js: one card per expression with a capture button + thumbnail -->
+      </div>
+      <canvas id="selfieCanvas" class="hidden"></canvas>
+    </section>
+
+    <!-- MONGODB + ML DATASET -->
+    <section class="card mongo-card" id="section-mongodb" aria-labelledby="mongoTitle">
+      <div class="card-head">
+        <span class="card-icon" aria-hidden="true">&#128451;</span>
+        <div>
+          <h2 id="mongoTitle">5 &middot; MongoDB training dataset</h2>
+          <p class="card-sub">Save this consented sample to the research database, then export the dataset for model training.</p>
+        </div>
+        <span class="step-badge" id="mongoBadge">Checking connection</span>
+      </div>
+
+      <div class="mongo-flow" aria-label="MongoDB machine-learning workflow">
+        <span>Capture labelled samples</span><span aria-hidden="true">&rarr;</span><span>Upload to MongoDB</span><span aria-hidden="true">&rarr;</span><span>Export for ML pipeline</span>
+      </div>
+
+      <p class="mongo-status" id="mongoStatus" aria-live="polite">Checking whether the configured MongoDB database is available&hellip;</p>
+      <p class="mongo-help" id="mongoSetupHint">To enable uploads, start MongoDB, configure <code>MONGODB_URI</code> and <code>MONGODB_DB</code> on the server, then run <code>python server.py</code> and open this page from that server.</p>
+
+      <div class="mongo-actions">
+        <button id="uploadAll" class="btn btn-secondary btn-large" disabled>Upload sample to MongoDB</button>
+        <span class="mongo-action-note">Uploads include only the text, audio, and labelled expression photos captured above.</span>
+      </div>
+      <div id="uploadStatus" class="upload-status" aria-live="polite"></div>
+
+      <div class="mongo-samples-head">
+        <div>
+          <h3>Uploaded dataset</h3>
+          <p>Stored MongoDB samples and their GridFS files. File contents are not displayed here.</p>
+        </div>
+        <button id="refreshMongoSamples" class="btn btn-secondary" type="button" disabled>Refresh list</button>
+      </div>
+      <p id="mongoSamplesStatus" class="mongo-help" aria-live="polite">Connect MongoDB to view uploaded samples.</p>
+      <div id="mongoSamples" class="mongo-samples" aria-live="polite"></div>
+
+      <details class="ml-export-guide">
+        <summary>Use the MongoDB data for ML training</summary>
+        <p>On the machine with access to the same database, export the stored samples into the format already used by this project:</p>
+        <code class="command">python ml/export_from_mongo.py --output collected-data</code>
+        <p>Then run the existing preprocessing/training workflow, for example:</p>
+        <code class="command">python ml/pipeline.py --collected collected-data --work ml-work</code>
+        <p class="mongo-help">Audio is exported as WebM and expression images retain their labels, so the existing conversion, augmentation, and training scripts can use them.</p>
+      </details>
+    </section>
+
+  </div>
+
+  <section class="card info-card">
+    <h3>Notes</h3>
+    <ul>
+      <li>Run this page in a modern browser. For full camera/audio access, use HTTPS or open it from localhost.</li>
+      <li>Captured files are saved only when you select <strong>Upload sample to MongoDB</strong>. Use the uploaded-dataset list above to confirm what reached the database.</li>
+      <li>See <code>DATA_COLLECTION_README.md</code> for the full consent, storage and processing guidance.</li>
+    </ul>
+  </section>
+
+</div>
+
+<script src="collect.js"></script>
+</body>
+</html>
